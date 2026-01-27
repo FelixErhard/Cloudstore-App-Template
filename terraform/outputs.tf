@@ -8,6 +8,11 @@ output "instance_id" {
   value       = openstack_compute_instance_v2.vm.id
 }
 
+output "app_name" {
+  description = "MANDATORY: Der Name der Anwendung für das Backend-Management"
+  value       = var.app_name
+}
+
 # ==============================================================================
 # 🟢 USER OUTPUTS (EXAMPLE)
 # Diese Outputs könnten dem Nutzer zur Verfügung gestellt werden (z.B. Credentials).

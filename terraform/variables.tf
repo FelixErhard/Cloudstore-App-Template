@@ -8,11 +8,6 @@ variable "deployment_id" {
   type        = string
 }
 
-# ==============================================================================
-# 🟢 APP PARAMETERS (REFERENCE EXAMPLES)
-# Kopieren Sie die passenden Blöcke für Ihre App.
-# ==============================================================================
-
 # --- 1. String Validation (Regex) ---
 variable "app_name" {
   type        = string
@@ -22,6 +17,12 @@ variable "app_name" {
     error_message = "app_name: Nur Kleinbuchstaben, Zahlen und Bindestrich erlaubt (3-20 Zeichen)."
   }
 }
+
+# ==============================================================================
+# 🟢 APP PARAMETERS (REFERENCE EXAMPLES)
+# Kopieren Sie die passenden Blöcke für Ihre App.
+# ==============================================================================
+
 
 # --- 2. Selection Validation (Whitelist) ---
 variable "environment" {

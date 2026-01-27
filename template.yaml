@@ -16,15 +16,15 @@ template:
   # Entwickler können diese Sektion anpassen, müssen aber die
   # Validierungs-Logik in variables.tf übernehmen.
   parameters:
-
-    # 1. STRING (Text mit Regex)
+  #MANDATORY
+    # 1. STRING (Text mit Regex) (MANDATORY)
     - name: app_name
       type: string
       description: "Name der Anwendung (nur Kleinbuchstaben)"
       required: true
       validation:
         pattern: "^[a-z0-9-]{3,20}$"
-
+  #OPTIONAL
     # 2. SELECTION (Dropdown)
     - name: environment
       type: selection
@@ -69,6 +69,10 @@ template:
     - name: instance_id
       description: "System ID der Haupt-Instanz"
       display: false
+    
+    - name: app_name
+      description: "Name der Anwendung"
+      display: true
 
     # OPTIONAL: Beispiele für Nutzer-Outputs
     - name: access_ip
