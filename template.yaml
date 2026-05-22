@@ -156,9 +156,6 @@ outputs:
     sensitive: true
     display: false
 
-estimated_costs:
-  hourly: "0.10 - 0.25 EUR"
-  monthly: "70 - 180 EUR"
 
 requirements:
   - "SSH Port 22 access"
