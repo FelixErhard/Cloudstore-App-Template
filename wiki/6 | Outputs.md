@@ -7,7 +7,6 @@ beschreibt welche dieser Terraform-Outputs der Appstore kennen, speichern und an
 Outputs haben keinen Einfluss auf den Deployment-Prozess selbst. Sie steuern ausschließlich
 was danach im Deployment-Detail sichtbar ist und welche Werte optional per E-Mail versandt werden können.
 
-Definiert welche Terraform-Outputs nach dem Deployment gespeichert und im Deployment-Detail angezeigt werden.
 
 ```yaml
 outputs:
@@ -27,11 +26,11 @@ outputs:
 
 ### `name`
 
-**Typ:** `string` — Pflicht
+**YAML-Datentyp:** `string` — **Pflicht!**
 
 Muss exakt dem Terraform Output-Namen entsprechen.
 
-```hcl
+```tf
 # terraform/outputs.tf
 output "app_url" {
   value = "https://${var.app_name}.cloudstore.example.com"
@@ -39,6 +38,7 @@ output "app_url" {
 ```
 
 ```yaml
+# template.yaml
 outputs:
   - name: app_url   # muss "app_url" heißen
 ```
@@ -47,7 +47,7 @@ outputs:
 
 ### `description`
 
-**Typ:** `string`
+**YAML-Datentyp:** `string`
 
 Angezeigter Label im Deployment-Detail.
 

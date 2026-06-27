@@ -2,7 +2,7 @@
 
 Standardmäßig rendert jeder Parameter ein einfaches Texteingabefeld oder Dropdown.
 Widgets ersetzen dieses Standard-Eingabefeld durch spezialisierte UI-Komponenten,
-die direkt mit dem CloudStore-Nutzerpool interagieren — also Nutzer oder Gruppen
+die beispielsweise direkt mit den CloudStore-Nutzerdaten interagieren — also Nutzer oder Gruppen
 aus dem System laden, statt freien Text entgegenzunehmen.
 
 Der Terraform-Wert bleibt identisch zum normalen Parameter-Typ (`string`, `array`, `groups`),
@@ -12,8 +12,7 @@ der Widget übernimmt nur die Eingabe. Widgets werden unter `x-ui.widget` konfig
 
 ## `user-picker`
 
-Ersetzt ein Texteingabefeld durch eine Suchmaske mit Nutzer-Autovervollständigung.
-Nutzer werden aus dem CloudStore-Nutzerpool geladen.
+Ersetzt ein Texteingabefeld durch eine Suchmaske mit Value-Help.
 
 ![alt text](images/user-picker.png)
 ![alt text](images/user-picker-selection.png)
@@ -23,12 +22,12 @@ x-ui:
   widget:
     type: user-picker
     multi: false      # false = Einzelauswahl, true = Mehrfachauswahl
-    extract: email    # Welcher Wert an Terraform übergeben wird
+    extract: email    # Welches Nutzer-Attribut aus der Datenbank an Terraform übergeben wird
 ```
 
 ### `multi`
 
-| Wert | Parameter-Typ | Terraform-Ausgabe |
+| Wert | Template-Parameter-Typ | Terraform-Ausgabe |
 |---|---|---|
 | `false` | `string` | `"max.mustermann@dhbw.de"` |
 | `true` | `array` | `["max@dhbw.de", "anna@dhbw.de"]` |
@@ -68,7 +67,7 @@ Siehe [Deploy-Strategien](Deploy-Strategien#one-per-user).
 
 ## `group-builder`
 
-Ermöglicht das Erstellen benannter Gruppen aus Nutzern des CloudStore-Nutzerpools.
+Ermöglicht das Erstellen benannter Gruppen aus Usern des CloudStores.
 Gibt ein `map(list(string))`-Objekt an Terraform zurück.
 
 ![alt text](images/group-builder.png)

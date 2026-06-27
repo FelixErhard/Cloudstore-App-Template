@@ -93,8 +93,10 @@ email_credentials:
 Wenn `true`, erscheint nach dem Konfigurationsschritt ein optionaler Schritt in dem der Nutzer
 Zugangsdaten nach dem Deployment per E-Mail versenden kann.
 
-Die Empfänger werden automatisch aus `user-picker`-Parametern abgeleitet.
+Die Empfänger werden automatisch aus `user-picker`-Parametern abgeleitet. Wenn es mehrere solcher Parameter gibt, werden entsprechend mehrere Kategorien an Emails verschickt (bspw. Admins und Studenten).
 Sensitive Outputs (siehe [Outputs](Outputs#sensitive)) sind im E-Mail-Schritt standardmäßig deaktiviert.
+
+
 
 ![Email-Service-Image](images/email_service.png)
 

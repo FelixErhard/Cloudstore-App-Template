@@ -5,9 +5,10 @@ Es steuert ausschließlich wie ein Parameter dargestellt wird — Gruppierung, R
 Sichtbarkeit, Pflichtfeld-Logik, Breite, Icons, Hinweistexte und Spezial-Widgets.
 
 `x-ui` hat keinen Einfluss auf Terraform. Felder unter `x-ui` werden vom Backend ignoriert;
-sie ändern nie welcher Wert an Terraform übergeben wird, sondern nur was der Nutzer im
+sie ändern nie, welcher Wert an Terraform übergeben wird, sondern nur was der Nutzer im
 Formular sieht und eingeben kann.
 
+>**Beispiel:**
 ```yaml
 - name: my_param
   type: string
@@ -27,8 +28,9 @@ Formular sieht und eingeben kann.
 
 ## `group_id`
 
-**Typ:** `string`
-**Abhängigkeit:** `ui-groups` muss eine Gruppe mit dieser `id` definieren
+**YAML-Datentyp:** `string`
+
+**Abhängigkeit:** `ui-groups` muss eine Gruppe mit dieser `id` definieren siehe [ui-groups](Template-Struktur#ui-groups)
 
 Ordnet den Parameter einer Gruppe zu.
 
@@ -43,7 +45,7 @@ Ist weder `group_id` noch das Legacy-Feld `group` gesetzt, landet der Parameter 
 
 ## `in_group_order`
 
-**Typ:** `number`
+**YAML-Datentyp:** `number`
 
 Reihenfolge des Parameters innerhalb seiner Gruppe. Niedrigere Werte erscheinen zuerst.
 Ohne dieses Feld ist die Reihenfolge undefiniert.
@@ -58,7 +60,7 @@ x-ui:
 
 ## `icon`
 
-**Typ:** `string`
+**YAML-Datentyp:** `string`
 
 Kleines Icon links neben dem Parameter-Label.
 
@@ -73,10 +75,9 @@ x-ui:
 
 ## `placeholder`
 
-**Typ:** `string`
+**YAML-Datentyp:** `string`
 
 Platzhaltertext im leeren Eingabefeld.
-Wird bei `user-picker` und `group-builder` als Suchfeld-Placeholder verwendet.
 
 ```yaml
 x-ui:
@@ -87,10 +88,10 @@ x-ui:
 
 ## `hint`
 
-**Typ:** `string`
+**YAML-Datentyp:** `string`
 
 Blauer Hilfetext der unterhalb des Labels erscheint — vor dem Eingabefeld.
-Für kontextuelle Informationen die die Eingabe erleichtern.
+Für kontextuelle Informationen, die die Eingabe erleichtern.
 
 ```yaml
 x-ui:
@@ -113,7 +114,7 @@ x-ui:
   warning: "GPU-Instanzen kosten 5× mehr als Standard-VMs"
 ```
 
-> `hint` und `warning` können technisch gleichzeitig gesetzt werden, sollten es aber semantisch nicht —
+> `hint` und `warning` können gleichzeitig gesetzt werden, sollten es aber semantisch nicht —
 > entweder ist eine Eingabe hilfreich zu erklären (`hint`) oder sie hat Konsequenzen (`warning`).
 
 ---

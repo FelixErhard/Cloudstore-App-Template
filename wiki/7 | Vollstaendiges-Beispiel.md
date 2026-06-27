@@ -4,12 +4,10 @@ Das folgende Template zeigt eine Node.js-Entwicklungsumgebung für Projektgruppe
 Es ist als kommentierte Kopiervorlage gedacht und demonstriert das Zusammenspiel
 aller Features in einem realen Anwendungsfall:
 
-- `general`/`specific`-Parameter mit `deploy-strategy` (alle drei Modi aktiviert)
-- `user-picker` (Einzel- und Mehrfachauswahl) und `group-builder`
-- `ui-groups` mit eingeklappter Gruppe für erweiterte Einstellungen
-- `visible-if` und `required-if` für bedingtes Pflichtfeld
-- `outputs` mit verschiedenen Sichtbarkeits- und Sensibilitätsstufen
-
+- `general`/`specific`-Parameter mit [`deploy-strategy`](Deploy-Strategien.md) (alle drei Modi aktiviert)
+- `user-picker` (Einzel- und Mehrfachauswahl) und `group-builder`, siehe [Widgets](Widgets.md)
+- [`ui-groups`](x-ui-Referenz.md) mit eingeklappter Gruppe für erweiterte Einstellungen
+- [`outputs`](Outputs.md) mit verschiedenen Sichtbarkeits- und Sensibilitätsstufen
 ```yaml
 name: nodejs-dev-environment
 display_name: "Node.js Entwicklungsumgebung"
@@ -160,8 +158,6 @@ parameters:
       x-ui:
         group_id: advanced
         in_group_order: 2
-        required-if: "git_repo_url !== ''"
-        visible-if: "git_repo_url !== ''"
         warning: "Token wird als Klartext an Terraform übergeben"
 
 outputs:
@@ -190,12 +186,3 @@ outputs:
     sensitive: true
     display: false
 ```
-
-## Weiterführende Links
-
-- [Template-Struktur](Template-Struktur) — alle Top-Level-Felder
-- [Parameter-Typen](Parameter-Typen) — `string`, `number`, `boolean`, `array`, `selection`, `groups`
-- [x-ui Referenz](x-ui-Referenz) — `visible-if`, `required-if`, `hint`, `warning` und mehr
-- [Widgets](Widgets) — `user-picker` und `group-builder`
-- [Deploy-Strategien](Deploy-Strategien) — Voraussetzungen für `one-per-user` und `one-per-group`
-- [Outputs](Outputs) — `display`, `sensitive`

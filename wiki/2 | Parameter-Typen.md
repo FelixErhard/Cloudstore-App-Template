@@ -1,22 +1,20 @@
-# Parameter-Typen
+# Template-Parameter
 
 Parameter sind die Eingabefelder des Deploymentworkflows. Jeder Parameter wird nach dem
-Deployment 1:1 als Terraform-Variable übergeben — der `name` muss exakt dem Variablen-Namen
-in der Terraform-Konfiguration entsprechen.
+Deployment 1:1 als Terraform-Variable übergeben — der `name` eines Template-Parameters in `template.yaml` muss exakt dem Terraform-Variablennamen
+in der `varibles.tf` entsprechen.
 
-Der `type` bestimmt dabei zweierlei: welches Eingabe-Widget im Formular gerendert wird,
-und in welchem Terraform-Typ der Wert ankommt.
 
-Jeder Parameter benötigt ein `type`-Feld. Der Typ bestimmt das Eingabe-Widget und das Terraform-Mapping.
+Jeder Parameter benötigt ein `type`-Feld. Dieses bestimmt das Eingabe-Widget und das Terraform-Mapping.
 
 ## Gemeinsame Felder
 
 Alle Parameter-Typen unterstützen diese Felder:
 
-| Feld | Typ | Pflicht | Beschreibung |
+| Feld | YAML-Datentyp | Pflicht | Beschreibung |
 |---|---|---|---|
 | `name` | string | Ja | Interner Bezeichner, muss exakt dem Terraform-Variablen-Namen entsprechen |
-| `type` | string | Ja | Einer der unten beschriebenen Typen |
+| `type` | string | Ja | Einer der unten beschriebenen Template-Parameter-Typen |
 | `description` | string | Empfohlen | Wird als Label über dem Eingabefeld angezeigt |
 | `required` | boolean | Nein | Pflichtfeld (Standard: `false`) |
 | `default` | any | Nein | Vorausgefüllter Wert, muss zum `type` passen |
@@ -25,10 +23,31 @@ Alle Parameter-Typen unterstützen diese Felder:
 
 ---
 
-## `string`
+### `validation`
+
+Das `validation`-Objekt liegt am Top-Level des Parameters (nicht unter `x-ui`).
+Es wird im Frontend als Echtzeit-Validierung angewendet.
+
+```yaml
+validation:
+  min: 1              # number: Mindestwert   / string: Mindestlänge
+  max: 100            # number: Maximalwert   / string: Maximallänge
+  pattern: "^[a-z]+$" # string: Regex-Pattern
+  min_items: 1        # array: Mindestanzahl Einträge
+  max_items: 10       # array: Maximalanzahl Einträge
+```
+
+Ist kein `validation`-Block gesetzt, werden keine Constraints angewendet.
+
+
+## Template-Parameter-Typen
+
+### `string`
 
 Rendert als einzeiliges Texteingabefeld.
 Terraform-Typ: `string`
+
+>**`template.yaml`:**
 
 ```yaml
 - name: app_name
@@ -41,6 +60,19 @@ Terraform-Typ: `string`
     max: 20
 ```
 
+>**`variables.tf` (beispielhaft):**
+
+```tf
+variable "app_name" {
+  type        = string
+  description = "Beispiel für Text-Validierung"
+  validation {
+    condition     = can(regex("^[a-z0-9-]{3,20}$", var.app_name))
+    error_message = "app_name: Nur Kleinbuchstaben, Zahlen und Bindestrich erlaubt (3-20 Zeichen)."
+  }
+}
+```
+
 | Validierungsfeld | Beschreibung |
 |---|---|
 | `pattern` | Regex-Pattern |
@@ -49,7 +81,7 @@ Terraform-Typ: `string`
 
 ---
 
-## `number`
+### `number`
 
 Rendert als numerisches Eingabefeld.
 Terraform-Typ: `number`
@@ -64,6 +96,7 @@ Terraform-Typ: `number`
     max: 10
 ```
 
+
 | Validierungsfeld | Beschreibung |
 |---|---|
 | `min` | Mindestwert (nicht Zeichenlänge) |
@@ -71,7 +104,7 @@ Terraform-Typ: `number`
 
 ---
 
-## `boolean`
+### `boolean`
 
 Rendert als Checkbox.
 Terraform-Typ: `bool`
@@ -153,20 +186,4 @@ Terraform-Typ: `map(list(string))` — jede Gruppe ist ein Key, zugehörige Nutz
 Setzt zwingend `widget.type: group-builder` voraus.
 Siehe [Widgets – group-builder](Widgets#group-builder).
 
----
 
-## `validation`
-
-Das `validation`-Objekt liegt am Top-Level des Parameters (nicht unter `x-ui`).
-Es wird im Frontend als Echtzeit-Validierung angewendet.
-
-```yaml
-validation:
-  min: 1              # number: Mindestwert   / string: Mindestlänge
-  max: 100            # number: Maximalwert   / string: Maximallänge
-  pattern: "^[a-z]+$" # string: Regex-Pattern
-  min_items: 1        # array: Mindestanzahl Einträge
-  max_items: 10       # array: Maximalanzahl Einträge
-```
-
-Ist kein `validation`-Block gesetzt, werden keine Constraints angewendet.

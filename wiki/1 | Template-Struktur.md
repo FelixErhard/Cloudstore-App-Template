@@ -86,9 +86,3 @@ ui-groups:
 | `order` | number | Nein | Reihenfolge im Formular |
 | `collapsed` | boolean | Nein | Gruppe standardmäßig eingeklappt (Standard: `false`) |
 
-## Weiterführend
-
-- [Parameter-Typen](Parameter-Typen)
-- [x-ui Referenz](x-ui-Referenz)
-- [Deploy-Strategien & Backend-Features](Deploy-Strategien)
-- [Outputs](Outputs)

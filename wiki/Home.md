@@ -29,22 +29,6 @@ template.yaml
     └── Backend-Features  → deploy-strategy, email_credentials, outputs
 ```
 
-Jeder Parameter unter `parameters` wird 1:1 als Terraform-Variable übergeben.
-Der `name` des Parameters muss exakt dem Variablen-Namen in der Terraform-Konfiguration entsprechen.
-Der `type` bestimmt den Terraform-Datentyp (`string`, `number`, `bool`, `list(string)`, `map(list(string))`).
-
-
-
-Das `x-ui`-Feld steuert ausschließlich die Darstellung im Konfigurationsformular:
-Gruppierung, Reihenfolge, Sichtbarkeit, Pflichtfeld-Logik, Icons, Hinweistexte, Breite.
-`x-ui` hat keinen Einfluss auf Terraform — es ändert nie welcher Wert übergeben wird.
-
-
-Das `outputs`-Array beschreibt welche Terraform-Outputs nach dem Deployment
-gespeichert und im Deployment-Detail angezeigt werden sollen.
-Es steuert auch welche Werte als sensibel markiert und im E-Mail-Schritt angeboten werden.
-
-Backend-Features bieten erweiterte Funktionalitäten bezüglich des Deployment-Prozesses. Darunter fällt das Versenden von Credentails via Email oder auch Deployment-Strategien.
 
 ## Deployment-Workflow
 
