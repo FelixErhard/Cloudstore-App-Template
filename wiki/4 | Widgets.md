@@ -44,7 +44,7 @@ Bestimmt welches Nutzer-Attribut als Wert übergeben wird:
 ### Abhängigkeit zu `deploy-strategy`
 
 Ein `user-picker` mit `multi: true` in `parameters.general` ist Voraussetzung für `one-per-user`.
-Siehe [Deploy-Strategien](Deploy-Strategien#one-per-user).
+Siehe [Deploy-Strategien](5%20%7C%20Deploy-Strategien#one-per-user).
 
 ### Vollständiges Beispiel
 
@@ -102,7 +102,7 @@ Setzt `type: groups` am Parameter voraus.
 ### Abhängigkeit zu `deploy-strategy`
 
 Ein `group-builder` in `parameters.general` ist Voraussetzung für `one-per-group`.
-Siehe [Deploy-Strategien](Deploy-Strategien#one-per-group).
+Siehe [Deploy-Strategien](5%20%7C%20Deploy-Strategien#one-per-group).
 
 ### Vollständiges Beispiel
 
@@ -118,3 +118,7 @@ Siehe [Deploy-Strategien](Deploy-Strategien#one-per-group).
       type: group-builder
       extract: email
 ```
+
+---
+
+[← Zurück zur Übersicht](Home)

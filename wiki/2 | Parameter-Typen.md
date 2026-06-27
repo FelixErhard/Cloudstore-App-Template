@@ -19,7 +19,7 @@ Alle Parameter-Typen unterstützen diese Felder:
 | `required` | boolean | Nein | Pflichtfeld (Standard: `false`) |
 | `default` | any | Nein | Vorausgefüllter Wert, muss zum `type` passen |
 | `validation` | object | Nein | Validierungsregeln (siehe unten) |
-| `x-ui` | object | Nein | UI-Steuerung (siehe [x-ui Referenz](x-ui-Referenz)) |
+| `x-ui` | object | Nein | UI-Steuerung (siehe [x-ui Referenz](3%20%7C%20x-ui-Referenz)) |
 
 ---
 
@@ -139,7 +139,7 @@ Terraform-Typ: `list(string)`
 | `max_items` | Maximalanzahl Einträge |
 
 Kann auch als `user-picker` mit `multi: true` verwendet werden — dann übernimmt der Widget die Eingabe.
-Siehe [Widgets – user-picker](Widgets#user-picker).
+Siehe [Widgets – user-picker](4%20%7C%20Widgets#user-picker).
 
 ---
 
@@ -184,6 +184,8 @@ Terraform-Typ: `map(list(string))` — jede Gruppe ist ein Key, zugehörige Nutz
 ```
 
 Setzt zwingend `widget.type: group-builder` voraus.
-Siehe [Widgets – group-builder](Widgets#group-builder).
+Siehe [Widgets – group-builder](4%20%7C%20Widgets#group-builder).
 
+---
 
+[← Zurück zur Übersicht](Home)

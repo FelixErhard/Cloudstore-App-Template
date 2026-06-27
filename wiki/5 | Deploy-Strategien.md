@@ -94,7 +94,7 @@ Wenn `true`, erscheint nach dem Konfigurationsschritt ein optionaler Schritt in 
 Zugangsdaten nach dem Deployment per E-Mail versenden kann.
 
 Die Empfänger werden automatisch aus `user-picker`-Parametern abgeleitet. Wenn es mehrere solcher Parameter gibt, werden entsprechend mehrere Kategorien an Emails verschickt (bspw. Admins und Studenten).
-Sensitive Outputs (siehe [Outputs](Outputs#sensitive)) sind im E-Mail-Schritt standardmäßig deaktiviert.
+Sensitive Outputs (siehe [Outputs](6%20%7C%20Outputs#sensitive)) sind im E-Mail-Schritt standardmäßig deaktiviert.
 
 
 
@@ -113,3 +113,7 @@ Sensitive Outputs (siehe [Outputs](Outputs#sensitive)) sind im E-Mail-Schritt st
 
 Alle drei `deploy-strategy`-Modi können gleichzeitig aktiviert sein — der Nutzer wählt beim
 Deployment welchen Modus er verwenden möchte.
+
+---
+
+[← Zurück zur Übersicht](Home)

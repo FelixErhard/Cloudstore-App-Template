@@ -4,10 +4,10 @@ Das folgende Template zeigt eine Node.js-Entwicklungsumgebung für Projektgruppe
 Es ist als kommentierte Kopiervorlage gedacht und demonstriert das Zusammenspiel
 aller Features in einem realen Anwendungsfall:
 
-- `general`/`specific`-Parameter mit [`deploy-strategy`](Deploy-Strategien.md) (alle drei Modi aktiviert)
-- `user-picker` (Einzel- und Mehrfachauswahl) und `group-builder`, siehe [Widgets](Widgets.md)
-- [`ui-groups`](x-ui-Referenz.md) mit eingeklappter Gruppe für erweiterte Einstellungen
-- [`outputs`](Outputs.md) mit verschiedenen Sichtbarkeits- und Sensibilitätsstufen
+- `general`/`specific`-Parameter mit [`deploy-strategy`](5%20%7C%20Deploy-Strategien.md) (alle drei Modi aktiviert)
+- `user-picker` (Einzel- und Mehrfachauswahl) und `group-builder`, siehe [Widgets](4%20%7C%20Widgets.md)
+- [`ui-groups`](3%20%7C%20x-ui-Referenz.md) mit eingeklappter Gruppe für erweiterte Einstellungen
+- [`outputs`](6%20%7C%20Outputs.md) mit verschiedenen Sichtbarkeits- und Sensibilitätsstufen
 ```yaml
 name: nodejs-dev-environment
 display_name: "Node.js Entwicklungsumgebung"
@@ -186,3 +186,7 @@ outputs:
     sensitive: true
     display: false
 ```
+
+---
+
+[← Zurück zur Übersicht](Home)

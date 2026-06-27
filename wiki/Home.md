@@ -7,13 +7,13 @@ Hier findest du alle Informationen, um eigene App-Templates für den CloudStore-
 
 | Seite | Inhalt |
 |---|---|
-| [Template-Struktur](Template-Struktur) | Vollständige YAML-Dateistruktur als Referenz |
-| [Parameter-Typen](Parameter-Typen) | `string`, `number`, `boolean`, `array`, `selection`, `groups` |
-| [x-ui Referenz](x-ui-Referenz) | Alle UI-Steuerungsfelder: Gruppen, Sichtbarkeit, Layouts, Hinweise |
-| [Widgets](Widgets) | Spezialisierte Eingabekomponenten: `user-picker` & `group-builder` |
-| [Deploy-Strategien & Backend-Features](Deploy-Strategien) | `deploy-strategy`, `email_credentials` und ihre Voraussetzungen |
-| [Outputs](Outputs) | Terraform-Outputs im Template definieren und anzeigen |
-| [Vollständiges Beispiel](Vollstaendiges-Beispiel) | Kommentiertes Node.js-Template als Kopiervorlage |
+| [Template-Struktur](1%20%7C%20Template-Struktur) | Vollständige YAML-Dateistruktur als Referenz |
+| [Parameter-Typen](2%20%7C%20Parameter-Typen) | `string`, `number`, `boolean`, `array`, `selection`, `groups` |
+| [x-ui Referenz](3%20%7C%20x-ui-Referenz) | Alle UI-Steuerungsfelder: Gruppen, Sichtbarkeit, Layouts, Hinweise |
+| [Widgets](4%20%7C%20Widgets) | Spezialisierte Eingabekomponenten: `user-picker` & `group-builder` |
+| [Deploy-Strategien & Backend-Features](5%20%7C%20Deploy-Strategien) | `deploy-strategy`, `email_credentials` und ihre Voraussetzungen |
+| [Outputs](6%20%7C%20Outputs) | Terraform-Outputs im Template definieren und anzeigen |
+| [Vollständiges Beispiel](7%20%7C%20Vollstaendiges-Beispiel) | Kommentiertes Node.js-Template als Kopiervorlage |
 
 # Architektur & Konzept
 
@@ -56,6 +56,6 @@ Terraform-Deployment
 
 ## Weiterführend
 
-- [Template-Struktur](Template-Struktur) — alle Top-Level-Felder im Überblick
-- [Deploy-Strategien & Backend-Features](Deploy-Strategien) — `deploy-strategy` und `email_credentials`
-- [Parameter-Typen](Parameter-Typen) — welche Typen es gibt und wie sie gemappt werden
+- [Template-Struktur](1%20%7C%20Template-Struktur) — alle Top-Level-Felder im Überblick
+- [Deploy-Strategien & Backend-Features](5%20%7C%20Deploy-Strategien) — `deploy-strategy` und `email_credentials`
+- [Parameter-Typen](2%20%7C%20Parameter-Typen) — welche Typen es gibt und wie sie gemappt werden

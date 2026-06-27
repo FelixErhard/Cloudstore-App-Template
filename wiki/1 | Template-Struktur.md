@@ -66,7 +66,7 @@ Das Legacy-Format wird weiterhin unterstützt, unterstützt aber keine `deploy-s
 ## `ui-groups`
 
 Gruppenstruktur für das Konfigurationsformular.
-Details: [x-ui Referenz – group_id](x-ui-Referenz#group_id)
+Details: [x-ui Referenz – group_id](3%20%7C%20x-ui-Referenz#group_id)
 
 ```yaml
 ui-groups:
@@ -86,3 +86,6 @@ ui-groups:
 | `order` | number | Nein | Reihenfolge im Formular |
 | `collapsed` | boolean | Nein | Gruppe standardmäßig eingeklappt (Standard: `false`) |
 
+---
+
+[← Zurück zur Übersicht](Home)

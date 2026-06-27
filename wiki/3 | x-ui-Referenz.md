@@ -30,7 +30,7 @@ Formular sieht und eingeben kann.
 
 **YAML-Datentyp:** `string`
 
-**Abhängigkeit:** `ui-groups` muss eine Gruppe mit dieser `id` definieren siehe [ui-groups](Template-Struktur#ui-groups)
+**Abhängigkeit:** `ui-groups` muss eine Gruppe mit dieser `id` definieren siehe [ui-groups](1%20%7C%20Template-Struktur#ui-groups)
 
 Ordnet den Parameter einer Gruppe zu.
 
@@ -139,7 +139,7 @@ Der Wert aus `default` wird trotzdem an Terraform übergeben.
 ## `widget`
 
 Ersetzt das Standard-Eingabefeld durch eine spezialisierte UI-Komponente.
-Vollständige Dokumentation: [Widgets](Widgets)
+Vollständige Dokumentation: [Widgets](4%20%7C%20Widgets)
 
 ```yaml
 x-ui:
@@ -148,3 +148,7 @@ x-ui:
     multi: true
     extract: email
 ```
+
+---
+
+[← Zurück zur Übersicht](Home)
