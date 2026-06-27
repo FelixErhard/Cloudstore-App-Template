@@ -1,5 +1,13 @@
 # Deploy-Strategien & Backend-Features
 
+`deploy-strategy` steuert wie viele VMs deployt werden und für wen — eine für alle,
+eine pro Nutzer oder eine pro Gruppe. Die Wahl hat direkte Auswirkungen auf das Template:
+`one-per-user` und `one-per-group` setzen bestimmte Widgets in `parameters.general` voraus,
+ohne die der entsprechende Modus nicht aktiviert werden kann.
+
+`email_credentials` ist unabhängig davon und aktiviert einen optionalen Schritt nach dem Deployment,
+in dem der Nutzer generierte Zugangsdaten per E-Mail versenden kann.
+
 ## `deploy-strategy`
 
 Bestimmt welche Deployment-Modi dem Nutzer im Wizard angeboten werden.
@@ -12,6 +20,11 @@ deploy-strategy:
 ```
 
 Ist `deploy-strategy` nicht gesetzt, steht nur `one-instance` zur Verfügung.
+
+
+Duch das Festlegen der `deploy-strategy` wird die Deplyoment-Strategie-Seite im Deplyoment-Workflow verfügbar:
+
+![Deployment-Strategie-Image](images/deployment_strategie.png)
 
 ---
 
@@ -82,6 +95,8 @@ Zugangsdaten nach dem Deployment per E-Mail versenden kann.
 
 Die Empfänger werden automatisch aus `user-picker`-Parametern abgeleitet.
 Sensitive Outputs (siehe [Outputs](Outputs#sensitive)) sind im E-Mail-Schritt standardmäßig deaktiviert.
+
+![Email-Service-Image](images/email_service.png)
 
 ---
 

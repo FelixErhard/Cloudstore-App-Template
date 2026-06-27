@@ -17,12 +17,7 @@ Formular sieht und eingeben kann.
     icon: Cpu
     placeholder: "Beispieltext"
     hint: "Hilfreicher Hinweis"
-    warning: "Achtung: kostenpflichtig"
-    hidden: false
-    width: half
-    visible-if: "some_flag === true"
-    required-if: "other_field !== ''"
-    target: terraform
+    hidden: false    
     widget:
       type: user-picker
       ...
@@ -111,6 +106,8 @@ x-ui:
 Gelber Warnhinweis der unterhalb des Eingabefelds erscheint.
 Für Hinweise auf Kosten, Risiken oder irreversible Aktionen.
 
+**Achtung: `warning` überschreibt `hint`.**
+
 ```yaml
 x-ui:
   warning: "GPU-Instanzen kosten 5× mehr als Standard-VMs"
@@ -135,82 +132,8 @@ Der Wert aus `default` wird trotzdem an Terraform übergeben.
   x-ui:
     hidden: true
 ```
-
 ---
 
-## `width`
-
-**Typ:** `string` — `full` (Standard) | `half`
-
-Setzt die Breite des Eingabefelds auf 50%. Sinnvoll für kurze zusammengehörige Werte wie Min/Max-Paare.
-
-```yaml
-- name: min_replicas
-  x-ui:
-    width: half
-- name: max_replicas
-  x-ui:
-    width: half
-```
-
----
-
-## `visible-if`
-
-**Typ:** `string` (JavaScript-Expression)
-
-Parameter wird nur angezeigt wenn der Ausdruck `true` ergibt.
-Kann auf andere Parameter-Namen im Formular zugreifen.
-
-```yaml
-- name: enable_gpu
-  type: boolean
-
-- name: gpu_count
-  type: number
-  x-ui:
-    visible-if: "enable_gpu === true"
-```
-
-Weitere Beispiele:
-
-```
-"ram_mb > 8192"
-"cpu_cores >= 4 && enable_gpu === true"
-"git_repo_url !== ''"
-```
-
----
-
-## `required-if`
-
-**Typ:** `string` (JavaScript-Expression)
-
-Parameter wird nur als Pflichtfeld behandelt wenn der Ausdruck `true` ergibt.
-Ergänzt das statische `required`-Feld für bedingte Pflichtfelder.
-
-```yaml
-- name: git_token
-  type: string
-  x-ui:
-    required-if: "git_repo_url !== ''"
-```
-
----
-
-## `target`
-
-**Typ:** `string` — `terraform` (Standard) | `backend`
-
-Bestimmt wohin der Wert nach dem Deployment übergeben wird.
-`backend` leitet den Wert an das Backend weiter statt an Terraform.
-
-```yaml
-x-ui:
-  target: backend
-```
-
----
 
 ## `widget`
 

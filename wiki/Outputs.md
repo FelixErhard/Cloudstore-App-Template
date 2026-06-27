@@ -69,7 +69,7 @@ Angezeigter Label im Deployment-Detail.
 **Typ:** `boolean` — Standard: `false`
 
 Markiert den Output als sensibel (Passwörter, SSH-Keys, Tokens).
-Sensitive Outputs sind im E-Mail-Versand-Schritt standardmäßig deaktiviert.
+Sensitive Outputs sind im E-Mail-Versand-Schritt standardmäßig deaktiviert und werden seperat gespeichert.
 
 ```yaml
 outputs:

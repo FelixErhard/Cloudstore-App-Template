@@ -1,7 +1,12 @@
 # Widgets
 
-Widgets ersetzen Standard-Eingabefelder durch spezialisierte UI-Komponenten.
-Sie werden unter `x-ui.widget` konfiguriert.
+Standardmäßig rendert jeder Parameter ein einfaches Texteingabefeld oder Dropdown.
+Widgets ersetzen dieses Standard-Eingabefeld durch spezialisierte UI-Komponenten,
+die direkt mit dem CloudStore-Nutzerpool interagieren — also Nutzer oder Gruppen
+aus dem System laden, statt freien Text entgegenzunehmen.
+
+Der Terraform-Wert bleibt identisch zum normalen Parameter-Typ (`string`, `array`, `groups`),
+der Widget übernimmt nur die Eingabe. Widgets werden unter `x-ui.widget` konfiguriert.
 
 ---
 
@@ -32,8 +37,7 @@ Bestimmt welches Nutzer-Attribut als Wert übergeben wird:
 | Wert | Ausgabe |
 |---|---|
 | `email` | E-Mail-Adresse (Standard) |
-| `name` | Vorname |
-| `id` | Interne Nutzer-ID |
+| `name` | Username |
 
 ### Abhängigkeit zu `deploy-strategy`
 

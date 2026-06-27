@@ -1,6 +1,11 @@
 # Template-Struktur
 
-Übersicht aller Top-Level-Felder einer `template.yaml`.
+Die `template.yaml` besteht aus zwei Arten von Feldern: **Metadaten** (Name, Version, Icon, Tags)
+die den Eintrag im Appstore beschreiben, und **funktionale Felder** die das Verhalten beim
+Deployment steuern — `parameters`, `x-ui`, `outputs`, `deploy-strategy`, `email_credentials`.
+
+Diese Seite gibt eine Übersicht aller Top-Level-Felder. Die Details zu den funktionalen
+Feldern findest du in den verlinkten Seiten.
 
 ## Dateistruktur
 
@@ -60,7 +65,7 @@ Das Legacy-Format wird weiterhin unterstützt, unterstützt aber keine `deploy-s
 
 ## `ui-groups`
 
-Optionale Gruppenstruktur für das Konfigurationsformular.
+Gruppenstruktur für das Konfigurationsformular.
 Details: [x-ui Referenz – group_id](x-ui-Referenz#group_id)
 
 ```yaml

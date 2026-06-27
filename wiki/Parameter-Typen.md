@@ -1,6 +1,6 @@
 # Parameter-Typen
 
-Parameter sind die Eingabefelder des Konfigurationsassistenten. Jeder Parameter wird nach dem
+Parameter sind die Eingabefelder des Deploymentworkflows. Jeder Parameter wird nach dem
 Deployment 1:1 als Terraform-Variable übergeben — der `name` muss exakt dem Variablen-Namen
 in der Terraform-Konfiguration entsprechen.
 
@@ -82,8 +82,6 @@ Terraform-Typ: `bool`
   default: false
   description: "GPU-Beschleunigung aktivieren"
 ```
-
-Typischer Einsatz: Steuert via `x-ui.visible-if` ob abhängige Parameter angezeigt werden.
 
 ---
 

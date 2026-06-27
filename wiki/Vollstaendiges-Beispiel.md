@@ -1,8 +1,14 @@
 # Vollständiges Beispiel
 
-Node.js-Entwicklungsumgebung als kommentierte Kopiervorlage.
-Demonstriert alle Features: `deploy-strategy`, `ui-groups`, `user-picker`, `group-builder`,
-`visible-if`, `selection`, `outputs`.
+Das folgende Template zeigt eine Node.js-Entwicklungsumgebung für Projektgruppen.
+Es ist als kommentierte Kopiervorlage gedacht und demonstriert das Zusammenspiel
+aller Features in einem realen Anwendungsfall:
+
+- `general`/`specific`-Parameter mit `deploy-strategy` (alle drei Modi aktiviert)
+- `user-picker` (Einzel- und Mehrfachauswahl) und `group-builder`
+- `ui-groups` mit eingeklappter Gruppe für erweiterte Einstellungen
+- `visible-if` und `required-if` für bedingtes Pflichtfeld
+- `outputs` mit verschiedenen Sichtbarkeits- und Sensibilitätsstufen
 
 ```yaml
 name: nodejs-dev-environment
