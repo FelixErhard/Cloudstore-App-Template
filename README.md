@@ -1,78 +1,28 @@
-# Cloudstore-App-Template
+# Cloudstore App-Template
 
-Grundsätzliche Idee: Template.yml mappt auf Terraform varibles und ist schnittstelle zwischen Appstore (Frontend und Backen-Features) und Teraform App-Entwicklung 
+Dieses Repository enthält das Template-Schema für den CloudStore-Appstore.
+Eine `template.yaml` beschreibt eine deploybare App: welche Parameter der Nutzer konfigurieren kann,
+wie das Formular aussieht und welche Deployment-Modi zur Verfügung stehen.
 
-# ui-grous
+## Dokumentation
 
-## id
+Die vollständige Entwicklerdokumentation befindet sich im **[Wiki](../../wiki)**.
 
-## title
+| Seite | Inhalt |
+|---|---|
+| [Home](../../wiki/Home) | Einstieg, Konzept und Deployment-Workflow |
+| [Template-Struktur](../../wiki/Template-Struktur) | Alle Top-Level-Felder als Referenz |
+| [Parameter-Typen](../../wiki/Parameter-Typen) | `string`, `number`, `boolean`, `array`, `selection`, `groups` |
+| [x-ui Referenz](../../wiki/x-ui-Referenz) | UI-Steuerung: Gruppen, Sichtbarkeit, Layouts, Hinweise |
+| [Widgets](../../wiki/Widgets) | `user-picker` & `group-builder` |
+| [Deploy-Strategien & Backend-Features](../../wiki/Deploy-Strategien) | `deploy-strategy`, `email_credentials` |
+| [Outputs](../../wiki/Outputs) | Terraform-Outputs definieren und anzeigen |
+| [Vollständiges Beispiel](../../wiki/Vollstaendiges-Beispiel) | Kommentiertes Node.js-Template als Kopiervorlage |
 
-### order
+## Repo-Inhalt
 
-### collapsed
-
-
-# Parameter
-
-General und Specific erklärung links auf die datei als beispiel
-
-## name
-
-## Types
-
-### string
-
-Wird als standard html text feld gerendert
-
-Zusätzliche Optionen: Validation mit regex (verweis)
-
-### selection
-
-Wird als html dropdown gerendert
-
-#### options and default
-
-### number
-
-## Required
-
-## descrtiopt
-
-## Validation
-
-### min max
-
-### pattern
-
-
-
-# X-UI-Parameter
-
-## group_id
-
-## in_group:order
-
-## Icons
-
-## Placeholder
-
-## Hints und Warning
-
-Schließen sich gegenseitig aus 
-
-
-## Widget-Komponenten `widget:`
-
-### User-Picker
-
-### Group-Builder
-
-## hidden
-
-# Outputs
-
-## name
-## description
-## display
-## sensitiv
+```
+template.yaml        # Referenz-Template mit allen Features
+terraform/           # Beispiel-Terraform-Konfiguration
+wiki/                # Wiki-Quellseiten (gespiegelt auf GitHub Wiki)
+```
