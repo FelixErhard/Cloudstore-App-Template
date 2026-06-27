@@ -1,7 +1,12 @@
 # x-ui Referenz
 
-Das `x-ui`-Objekt steuert die Darstellung eines Parameters im Konfigurationsformular.
-Es hat keinen Einfluss auf Terraform-Variablen.
+`x-ui` ist die Schicht zwischen Parametern und dem Formular im Appstore.
+Es steuert ausschließlich wie ein Parameter dargestellt wird — Gruppierung, Reihenfolge,
+Sichtbarkeit, Pflichtfeld-Logik, Breite, Icons, Hinweistexte und Spezial-Widgets.
+
+`x-ui` hat keinen Einfluss auf Terraform. Felder unter `x-ui` werden vom Backend ignoriert;
+sie ändern nie welcher Wert an Terraform übergeben wird, sondern nur was der Nutzer im
+Formular sieht und eingeben kann.
 
 ```yaml
 - name: my_param

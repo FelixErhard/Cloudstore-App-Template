@@ -12,17 +12,25 @@ template.yaml
     └── Backend-Features  → deploy-strategy, email_credentials, outputs
 ```
 
-### Terraform
+### `parameters` → Terraform
 
 Jeder Parameter unter `parameters` wird 1:1 als Terraform-Variable übergeben.
 Der `name` des Parameters muss exakt dem Variablen-Namen in der Terraform-Konfiguration entsprechen.
+Der `type` bestimmt den Terraform-Datentyp (`string`, `number`, `bool`, `list(string)`, `map(list(string))`).
 
-### Appstore-UI
+### `x-ui` → Appstore-Formular
 
-Das `x-ui`-Feld steuert ausschließlich die Darstellung im Konfigurationsformular —
-es hat keinen Einfluss auf die an Terraform übergebenen Werte.
+Das `x-ui`-Feld steuert ausschließlich die Darstellung im Konfigurationsformular:
+Gruppierung, Reihenfolge, Sichtbarkeit, Pflichtfeld-Logik, Icons, Hinweistexte, Breite.
+`x-ui` hat keinen Einfluss auf Terraform — es ändert nie welcher Wert übergeben wird.
 
-### Backend
+### `outputs` → Deployment-Detail
+
+Das `outputs`-Array beschreibt welche Terraform-Outputs nach dem Deployment
+gespeichert und im Deployment-Detail angezeigt werden sollen.
+Es steuert auch welche Werte als sensibel markiert und im E-Mail-Schritt angeboten werden.
+
+### Backend-Features
 
 Der Backend-Parser liest die Datei via `yaml.safe_load()` und speichert sie unverändert als JSON.
 Das Frontend empfängt alles was in der Datei steht — unbekannte Felder werden ignoriert, nicht gefiltert.

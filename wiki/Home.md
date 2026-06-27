@@ -3,6 +3,24 @@
 Willkommen im Wiki des CloudStore App-Template-Projekts.
 Hier findest du alle Informationen, um eigene App-Templates für den CloudStore-Appstore zu erstellen.
 
+## Wie ein Template funktioniert
+
+Ein Template ist eine einzige `template.yaml`-Datei. Sie hat drei klar getrennte Aufgaben:
+
+**`parameters`** — definiert die Eingabefelder des Konfigurationsassistenten.
+Jeder Parameter wird direkt als Terraform-Variable übergeben. Der `name` muss exakt
+dem Variablen-Namen in der Terraform-Konfiguration entsprechen.
+
+**`x-ui`** — steuert ausschließlich wie ein Parameter im Formular dargestellt wird:
+Gruppierung, Reihenfolge, Sichtbarkeit, Pflichtfeld-Logik, Icons, Hinweistexte.
+`x-ui` hat keinen Einfluss auf Terraform — es ändert nur was der Nutzer sieht und wie.
+
+**`outputs`** — beschreibt welche Terraform-Outputs nach dem Deployment
+gespeichert und im Deployment-Detail angezeigt werden (z.B. App-URL, SSH-Befehl, Credentials).
+
+Daneben steuern `deploy-strategy` und `email_credentials` Backend-Features
+(Deployment-Modi, E-Mail-Versand von Zugangsdaten).
+
 ## Schnellnavigation
 
 | Seite | Inhalt |

@@ -1,5 +1,12 @@
 # Outputs
 
+Nach einem Deployment liefert Terraform Ausgabewerte zurück — zum Beispiel die URL der App,
+einen SSH-Befehl oder generierte Credentials. Das `outputs`-Array in der `template.yaml`
+beschreibt welche dieser Terraform-Outputs der Appstore kennen, speichern und anzeigen soll.
+
+Outputs haben keinen Einfluss auf den Deployment-Prozess selbst. Sie steuern ausschließlich
+was danach im Deployment-Detail sichtbar ist und welche Werte optional per E-Mail versandt werden können.
+
 Definiert welche Terraform-Outputs nach dem Deployment gespeichert und im Deployment-Detail angezeigt werden.
 
 ```yaml

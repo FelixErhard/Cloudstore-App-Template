@@ -1,5 +1,12 @@
 # Parameter-Typen
 
+Parameter sind die Eingabefelder des Konfigurationsassistenten. Jeder Parameter wird nach dem
+Deployment 1:1 als Terraform-Variable übergeben — der `name` muss exakt dem Variablen-Namen
+in der Terraform-Konfiguration entsprechen.
+
+Der `type` bestimmt dabei zweierlei: welches Eingabe-Widget im Formular gerendert wird,
+und in welchem Terraform-Typ der Wert ankommt.
+
 Jeder Parameter benötigt ein `type`-Feld. Der Typ bestimmt das Eingabe-Widget und das Terraform-Mapping.
 
 ## Gemeinsame Felder
