@@ -15,6 +15,9 @@ der Widget übernimmt nur die Eingabe. Widgets werden unter `x-ui.widget` konfig
 Ersetzt ein Texteingabefeld durch eine Suchmaske mit Nutzer-Autovervollständigung.
 Nutzer werden aus dem CloudStore-Nutzerpool geladen.
 
+![alt text](images/user-picker.png)
+![alt text](images/user-picker-selection.png)
+
 ```yaml
 x-ui:
   widget:
@@ -67,6 +70,11 @@ Siehe [Deploy-Strategien](Deploy-Strategien#one-per-user).
 
 Ermöglicht das Erstellen benannter Gruppen aus Nutzern des CloudStore-Nutzerpools.
 Gibt ein `map(list(string))`-Objekt an Terraform zurück.
+
+![alt text](images/group-builder.png)
+![alt text](images/group-builder-group.png)
+![alt text](images/group-builder-selection.png)
+
 
 ```yaml
 x-ui:
