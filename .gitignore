@@ -1,2 +1,10 @@
 clouds.yaml
-cloouds.yml
+clouds.yml
+terraform.tfvars
+coverage.xml
+.terraform/
+.terraform.lock.hcl
+*.tfstate
+*.tfstate.*
+*.tfvars
+.deployment-*/
