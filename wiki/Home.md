@@ -15,6 +15,12 @@ Hier findest du alle Informationen, um eigene App-Templates für den CloudStore-
 | [Outputs](6%20%7C%20Outputs) | Terraform-Outputs im Template definieren und anzeigen |
 | [Vollständiges Beispiel](7%20%7C%20Vollstaendiges-Beispiel) | Kommentiertes Node.js-Template als Kopiervorlage |
 
+## Privates Repository
+
+Wenn das App-Template in einem **privaten Repository** gehostet wird, muss der CloudStore-GitHub-Account als Contributor hinzugefügt werden, damit das Template vom System geklont werden kann.
+
+**GitHub-Benutzername:** `kompetenzzentrum-openstack`
+
 # Architektur & Konzept
 
 ## Die Rolle von `template.yaml`
